@@ -1,0 +1,124 @@
+<section *ngIf="sidebarWidth === 'WIDE'" class="library">
+  <header class="library__header">
+    <div class="library__header-title" (click)="toggleSidebarSize()">
+      <ng-icon
+        class="library__icon library__icon-menu"
+        name="heroBars4"
+      ></ng-icon>
+      <span class="library__title"> Tu biblioteca </span>
+    </div>
+
+    <div class="library__actions">
+      <ng-icon
+        class="library__icon library__icon-add"
+        name="heroPlus"
+      ></ng-icon>
+      <ng-icon
+        class="library__icon library__icon-show"
+        name="heroArrowRight"
+      ></ng-icon>
+    </div>
+  </header>
+
+  <article class="library__filters">
+    <div class="library__filters-tags">
+      <div
+        class="library__tag"
+        *ngFor="let tag of ['Playlist', 'Podcast', 'Álbum']"
+      >
+        {{ tag }}
+      </div>
+    </div>
+
+    <div class="library__filters-search">
+      <div class="library__filter-searchbox">
+        <div
+          class="library__filter-icon-container"
+          [class]="
+            isSearching
+              ? 'library__filter-icon-container--solid'
+              : 'library__filter-icon-container'
+          "
+        >
+          <ng-icon
+            class="library__icon"
+            name="heroMagnifyingGlass"
+            (click)="onSearch()"
+          ></ng-icon>
+        </div>
+        <input
+          *ngIf="isSearching"
+          placeholder="Buscar en Tu biblioteca"
+          class="library__filter-input"
+          type="text"
+        />
+      </div>
+      <div class="library__filter-recents">
+        <span *ngIf="!isSearching" class="library__title-recents"
+          >Recientes</span
+        >
+        <ng-icon
+          class="library__icon library__icon-recents"
+          name="heroListBullet"
+        ></ng-icon>
+      </div>
+    </div>
+  </article>
+
+  <main class="library__playlists">
+    <div class="card" *ngFor="let playlist of playlists">
+      <div class="card__image-container">
+        <img
+          class="card__image"
+          [src]="playlist.imageUrl"
+          [alt]="playlist.name"
+        />
+      </div>
+
+      <div class="card__body">
+        <span class="card__body-title">{{ playlist.name }}</span>
+        <div class="card__body-information">
+          <ng-icon
+            class="card__body-favorite"
+            name="heroStarSolid"
+            *ngIf="playlist.isPinned"
+          ></ng-icon>
+          <span class="card__type">{{ playlist.type }}</span>
+          <span class="card__divider"> - </span>
+          <span class="card__user">{{ playlist.user }}</span>
+        </div>
+      </div>
+
+      <div class="card__status">
+        <ng-icon
+          class="card__status-icon"
+          *ngIf="playlist.isListening"
+          name="heroSpeakerWaveSolid"
+        ></ng-icon>
+      </div>
+    </div>
+  </main>
+</section>
+
+<section *ngIf="sidebarWidth === 'NARROW'" class="library library--narrow">
+  <header class="library__header">
+    <div class="library__header-title" (click)="toggleSidebarSize()">
+      <ng-icon
+        class="library__icon library__icon-menu"
+        name="heroBars4"
+      ></ng-icon>
+    </div>
+  </header>
+
+  <main class="library__playlists">
+    <div class="card" *ngFor="let playlist of playlists">
+      <div class="card__image-container">
+        <img
+          class="card__image"
+          [src]="playlist.imageUrl"
+          [alt]="playlist.name"
+        />
+      </div>
+    </div>
+  </main>
+</section>
