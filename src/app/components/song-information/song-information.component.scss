@@ -1,6 +1,6 @@
 @import "../../../scss/styles.scss";
 
-.song-information {
+.song {
   width: 400px;
   height: 100%;
 
@@ -172,4 +172,66 @@
     font-weight: 500;
     color: $ligth-gray;
   }
+
+  &__credits {
+    width: 100%;
+    height: fit-content;
+
+    margin-top: 1rem ;
+    padding: 1rem;
+
+    box-sizing: border-box;
+
+    border-radius: 1rem;
+
+    background-color: $dark-gray;
+  }
+
+  &__credits-header {
+    margin-bottom: 1rem;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__credits-header-title{
+    margin: 0;
+
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__credits-header-showall {
+    color: $ligth-gray;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__musician-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__musician-info {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__musician-name {
+    color: $white;
+    font-size: 14px;
+  }
+
+  &__musician-role {
+    color: $ligth-gray;
+    font-size: 12px;
+  }
+  
 }

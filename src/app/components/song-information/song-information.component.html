@@ -1,65 +1,69 @@
-<section class="song-information">
-  <header class="song-information__header">
-    <span class="song-information__header-title"> Todo </span>
-    <div class="song-information__header-actions">
+<section class="song">
+  <header class="song__header">
+    <span class="song__header-title"> Todo </span>
+    <div class="song__header-actions">
       <ng-icon
-        class="song-information__header-icon-options"
+        class="song__header-icon-options"
         name="heroEllipsisHorizontal"
       ></ng-icon>
-      <ng-icon
-        class="song-information__header-icon-close"
-        name="heroXMark"
-      ></ng-icon>
+      <ng-icon class="song__header-icon-close" name="heroXMark"></ng-icon>
     </div>
   </header>
 
-  <section class="song-information__image-container">
+  <section class="song__image-container">
     <img
-      class="song-information__image"
+      class="song__image"
       src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/db/a2/7a/dba27a46-3685-508d-d32e-a0e73cc82251/00602567713296.rgb.jpg/1200x1200bb.jpg"
       alt=""
     />
   </section>
 
-  <section class="song-information__title">
-    <div class="song-information__song">
-      <span class="song-information__song-title"
-        >If I Fell - Remastered 2009</span
-      >
-      <span class="song-information__song-artist">The Beatles</span>
+  <section class="song__title">
+    <div class="song__song">
+      <span class="song__song-title">If I Fell - Remastered 2009</span>
+      <span class="song__song-artist">The Beatles</span>
     </div>
 
-    <ng-icon
-      class="song-information__song-status"
-      name="heroCheckCircleSolid"
-    ></ng-icon>
+    <ng-icon class="song__song-status" name="heroCheckCircleSolid"></ng-icon>
   </section>
 
-  <section class="song-information__about-artist">
-    <article class="song-information__artist-image-container">
-      <span class="song-information__about-artist-title"
-        >Acerca del Artista</span
-      >
+  <section class="song__about-artist">
+    <article class="song__artist-image-container">
+      <span class="song__about-artist-title">Acerca del Artista</span>
       <img
-        class="song-information__artist-image"
+        class="song__artist-image"
         src="https://media.diariolasamericas.com/p/068694e5b8acff3b306ee32d28794b9e/adjuntos/216/imagenes/000/988/0000988472/855x0/smart/beatlesjpg.jpg"
         alt=""
       />
     </article>
 
-    <article class="song-information__artist-body">
-      <span class="song-information__artist-name">The Beatles </span>
-      <div class="song-information__artist-followers">
-        <span class="song-information__artist-listeners"
-          >34.424.882 Oyentes Mensuales</span
-        >
-        <button class="song-information__artist-follow">Seguir</button>
+    <article class="song__artist-body">
+      <span class="song__artist-name">The Beatles </span>
+      <div class="song__artist-followers">
+        <span class="song__artist-listeners">34.424.882 Oyentes Mensuales</span>
+        <button class="song__artist-follow">Seguir</button>
       </div>
 
-      <p class="song-information__artist-description">
+      <p class="song__artist-description">
         The Beatles recorded together for a little over seven years. Between
         Octover 1962 and May 1970, they released thirteen albums and a ...
       </p>
     </article>
+  </section>
+
+  <section class="song__credits">
+    <div class="song__credits-header">
+      <span class="song__credits-header-title">Créditos</span>
+      <span class="song__credits-header-showall"> Mostrar todo </span>
+    </div>
+    <div class="song__musician-card">
+      <div class="song__musician-info">
+        <span class="song__musician-name">Jhon Lennon</span>
+        <span class="song__musician-role"
+          >Artista Principal, Productor, Escritor</span
+        >
+      </div>
+      <button class="song__artist-follow">Seguir</button>
+    </div>
   </section>
 </section>
