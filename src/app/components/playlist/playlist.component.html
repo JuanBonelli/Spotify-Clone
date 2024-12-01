@@ -1,1 +1,109 @@
-<p>playlist works!</p>
+<section class="playlist">
+  <article class="playlist__background">
+    <header class="playlist__header">
+      <article class="playlist__header-image-container">
+        <img
+          class="playlist__header-image"
+          src="https://preview.redd.it/rnqa7yhv4il71.jpg?width=640&crop=smart&auto=webp&s=819eb2bda1b35c7729065035a16e81824132e2f1"
+          alt=""
+        />
+      </article>
+
+      <article class="playlist__header-info">
+        <span class="playlist__type">Playlist Pública</span>
+        <span class="playlist__header-title"> Tus me Gusta </span>
+        <div class="playlist__data">
+          <span class="playlist__data-user"> Xenzze - </span>
+          <span class="playlist__data-songs"> 73 Canciones, </span>
+          <span class="playlist__data-time"> 4 h 30 min</span>
+        </div>
+      </article>
+    </header>
+
+    <main class="playlist__list">
+      <article class="playlist__list-filters">
+        <ng-icon
+          *ngIf="!isPlaying"
+          class="playlist__list-play"
+          name="heroPlayCircleSolid"
+          (click)="onPlayPause()"
+        ></ng-icon>
+
+        <ng-icon
+          *ngIf="isPlaying"
+          class="playlist__list-pause"
+          name="heroPauseCircleSolid"
+          (click)="onPlayPause()"
+        ></ng-icon>
+
+        <ng-icon class="playlist__list-shuffle" name="heroArrowPath"></ng-icon>
+
+        <ng-icon
+          class="playlist__list-download"
+          name="heroArrowDownCircle"
+        ></ng-icon>
+
+        <div class="playlist__list-order-by">
+          <span class="playlist__list-order-text">Orden Personalizado </span>
+          <ng-icon
+            class="playlist__list-order-icon"
+            name="heroListBullet"
+          ></ng-icon>
+        </div>
+      </article>
+
+      <article class="playlist__table-container">
+        <table class="table playlist__table">
+          <tr class="table__row table__row-header">
+            <th class="table__column table__column-title table__column-number">
+              <ng-icon class="table__hashtag" name="heroHashtagMini"></ng-icon>
+            </th>
+            <th class="table__column table__column-title">Título</th>
+            <th class="table__column table__column-title">Álbum</th>
+            <th class="table__column table__column-title">
+              Fecha en que se agregó
+            </th>
+            <th class="table__column table__column-title table__column-clock">
+              <ng-icon class="table__clock" name="heroClockMini"></ng-icon>
+            </th>
+          </tr>
+          <tr class="table__row">
+            <td class="table__column table__column-number">1</td>
+
+            <td class="table__column">
+              <div class="card">
+                <div class="card__image-container">
+                  <img
+                    class="card__image"
+                    [src]="
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsozEn2P0tiRDHoVYkxl43Zd_txDuUVnkdMA&s'
+                    "
+                    [alt]="'If I Fell'"
+                  />
+                </div>
+
+                <div class="card__body">
+                  <span class="card__body-title">If I Fell</span>
+                  <div class="card__body-information">
+                    <ng-icon
+                      class="card__body-favorite"
+                      name="heroStarSolid"
+                      *ngIf="false"
+                    ></ng-icon>
+                    <span class="card__type">Video Musical</span>
+                    <span class="card__divider"> - </span>
+                    <span class="card__user">The Beatles</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+
+            <td class="table__column">LA ISLA LP</td>
+            <td class="table__column">23 sept 2024</td>
+            <td class="table__column table__column-clock">2:59</td>
+          </tr>
+        </table>
+      </article>
+    </main>
+  </article>
+</section>

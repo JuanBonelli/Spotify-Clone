@@ -1,0 +1,298 @@
+@import "../../../scss/styles.scss";
+
+.playlist {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-radius: 0.75rem;
+  background-color: $black;
+
+  &__background {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(
+      0deg,
+      hsl(0deg 0% 7%) 0%,
+      hsl(344deg 0% 7%) 20%,
+      hsl(344deg 0% 7%) 40%,
+      hsl(344deg 0% 18%) 60%,
+      hsl(344deg 0% 43%) 80%,
+      hsl(0deg 0% 70%) 100%
+    );
+  }
+
+  &__header {
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    gap: 1rem;
+
+    padding: 1rem;
+
+    box-sizing: border-box;
+  }
+
+  &__header-image-container {
+    height: 100%;
+  }
+
+  &__header-image {
+    width: auto;
+    height: 100%;
+
+    border-radius: 0.5rem;
+  }
+
+  &__header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 0.25rem;
+  }
+
+  &__header-title {
+    font-size: 96px;
+    font-weight: bolder;
+    color: $white;
+  }
+
+  &__type {
+    font-size: 14px;
+    color: $white;
+  }
+
+  &__data-user {
+    font-size: 14px;
+    font-weight: 600;
+    color: $white;
+  }
+
+  &__data-songs,
+  &__data-time {
+    font-size: 14px;
+    font-weight: 500;
+    color: $ligth-gray;
+  }
+
+  &__list {
+    height: 1000px;
+
+    padding: 1rem;
+
+    overflow-y: auto;
+
+    background-color: transparent;
+    backdrop-filter: blur(4rem);
+  }
+
+  &__list-filters {
+    width: 100%;
+    height: 75px;
+
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+
+    box-sizing: border-box;
+  }
+
+  &__list-play,
+  &__list-pause {
+    height: 95%;
+    width: auto;
+    color: $green;
+  }
+
+  &__list-play:hover,
+  &__list-pause:hover {
+    color: $light-green;
+    stroke: $light-green;
+    stroke-width: 0.5px;
+    cursor: pointer;
+  }
+
+  &__list-shuffle,
+  &__list-download {
+    height: 70%;
+    width: auto;
+    color: $ligth-gray;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__list-shuffle:hover,
+  &__list-download:hover {
+    color: $white;
+    cursor: pointer;
+  }
+
+  &__list-order-by {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__list-order-by:hover &__list-order-text,
+  &__list-order-by:hover &__list-order-icon {
+    color: $white;
+    cursor: pointer;
+  }
+
+  &__list-order-text {
+    color: $ligth-gray;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__list-order-icon {
+    font-size: 24px;
+    color: $ligth-gray;
+  }
+
+  &__table-container {
+    width: 100%;
+    
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; 
+  
+  &__row {
+
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+
+    clip-path: xywh(0 0 100% 100% round 0.5em);
+    
+    text-align: left;
+
+  }
+  
+  &__row:hover {
+    background-color: $gray;
+  }
+
+  &__row-header {
+    border-bottom: 1px solid $gray;
+  }
+
+  &__column {
+    padding: 0.5rem;
+
+    font-size: 13px;
+    font-weight: 500;
+    color: $ligth-gray;
+    text-align: left;
+    
+  }
+
+  &__column-number {
+    font-size: 16px;
+  }
+
+  &__column-number, &__column-clock {
+    width: fit-content;
+
+    text-align: center;
+  }
+
+  &__clock, &__hashtag {
+    font-size: 20px;
+  }
+
+  
+}
+
+.card {
+
+  display: flex;
+  gap: 0.5rem;
+
+  border-radius: 0.5rem;
+  background-color: transparent;
+
+  &__image-container {
+      width: 48px;
+      height: 48px;
+
+      margin-right: 0.25rem;
+  }
+
+  &__image {
+      width: 100%;
+      height: auto;
+
+      border-radius: 0.25rem;
+  }
+
+  &__body {
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.25rem;
+
+  }
+
+  &__body-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: $white;
+  }
+
+  &__body-information {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      font-size: 12px;
+      font-weight: 500;
+      color: $ligth-gray;
+  }
+
+  &__body-favorite {
+      color: $green;
+      font-size: 16px;
+  }
+
+  &__status {
+      margin-left: auto;
+      margin-right: 0.25rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  &__status-icon {
+      font-size: 16px;
+      color: $green;
+  }
+
+
+}
